@@ -5,12 +5,12 @@ game.prototype.createDeck = function () {
     var sayi=['A',2,3,4,5,6,7,8,9,'B','Q','J','K'];
     var unvan=['D','H','C','S'];
     var deste =[]
-    sayi.forEach(element => {
-        unvan.forEach(item =>
-            {
-            deste.push(element+item);  
-            });
-    });
+    for(i=0;i<sayi.length;i++){
+        for(a=0;a<unvan.length;a++){
+            deste.push(sayi[i]+unvan[a]);
+        }
+    }
+    console.log(deste);
     return deste;
 }
 game.prototype.drawCard = function (deste,el) {
@@ -23,8 +23,10 @@ game.prototype.drawCard = function (deste,el) {
 }
 game.prototype.readHand =function (hand) {
     var tp = 0 ;
+    console.log("Hesaplanan elin dizisi:"+hand);
+    console.log(hand);
     hand.forEach(kart =>{
-        console.log("CARD : "+kart[0]+kart[1]);
+        //console.log("CARD : "+kart[0]+kart[1]);
         var card = {
             deger : kart[0],
             suit : kart[1],
@@ -34,16 +36,19 @@ game.prototype.readHand =function (hand) {
             console.log(card);
         }else{
             if(card.deger == "A"){
-                tp=tp+1;
+                console.log(card);
+                tp+=1;
+                if (tp > 21 ){
+                
+                }else{
+                    tp+=10;
+                }
+
             }else{
                 tp=tp+parseInt(card.deger);
                 console.log(card);
-
             }
-            
         }
-        
-
     });
     return tp;
     
