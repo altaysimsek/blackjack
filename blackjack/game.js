@@ -14,7 +14,7 @@ game.prototype.createDeck = function () {
     return deste;
 }
 game.prototype.drawCard = function (deste,el) {
-    var rnd = Math.floor(Math.random() * (deste.length+1));
+    var rnd = Math.floor(Math.random() * (deste.length));
     //console.log(rnd);random sayi söyle
     var selectedCard = deste[rnd];
     deste.splice(rnd-1,1);
@@ -22,9 +22,10 @@ game.prototype.drawCard = function (deste,el) {
     el.push(selectedCard);
 }
 game.prototype.readHand =function (hand) {
-    var tp = 0 ;
+    var tp = 0 ;//toplam değişkeni
     console.log("Hesaplanan elin dizisi:"+hand);
     console.log(hand);
+    //dizideki her kart okunur ve puanları hesaplanır
     hand.forEach(kart =>{
         //console.log("CARD : "+kart[0]+kart[1]);
         var card = {
