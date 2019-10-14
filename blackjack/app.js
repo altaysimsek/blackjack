@@ -90,6 +90,10 @@ $(document).ready(function(){
                 console.log("oyunu kazandın");
             }else if(opScore ==21){
                 console.log("Oyunu kayıp ettin.")
+            }else if(opScore > yoScore){
+                $("#gamePanel").fadeOut(2000);
+                $("#losG").fadeIn(2000);
+                $("#btnReplay").fadeIn(2000);
             }else if(opScore<18){
                 while(opScore<18){
                     oyun.drawCard(el,opHand);
