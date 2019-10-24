@@ -1,6 +1,7 @@
 # Blackjack
 ## Purposes
 When i develop this project , i focused some points which is 
+
 Learning and consilidate : 
  - Jquery
  - Bootstrap
